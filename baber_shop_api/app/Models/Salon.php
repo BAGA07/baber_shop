@@ -32,4 +32,9 @@ class Salon extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function queues(): HasMany
+{
+    return $this->hasMany(Queue::class);
+}
 }

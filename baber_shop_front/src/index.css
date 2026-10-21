@@ -1,0 +1,112 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #18241f;
+  background: #f5f7f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --green: #176b4d;
+  --green-dark: #104c38;
+  --green-light: #e9f4ed;
+  --muted: #75817a;
+  --border: #e4e9e5;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: var(--green); text-decoration: none; }
+button { cursor: pointer; }
+
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: "Manrope", sans-serif; letter-spacing: -0.04em; }
+
+.muted { color: var(--muted); line-height: 1.65; }
+.eyebrow { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .15em; margin-bottom: 13px; }
+.auth-page { min-height: 100vh; display: grid; grid-template-columns: 0.9fr 1.1fr; background: #fff; }
+
+.auth-brand { background: #104c38; color: white; padding: clamp(32px, 6vw, 88px); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.auth-brand::after { content: ""; position: absolute; width: 400px; height: 400px; border: 1px solid #ffffff20; border-radius: 50%; bottom: -170px; right: -150px; box-shadow: 0 0 0 50px #ffffff08, 0 0 0 100px #ffffff05; }
+.brand-logo { width: 54px; height: 54px; display: grid; place-items: center; border-radius: 16px; background: #ffffff18; color: #fff; margin-bottom: 36px; }
+.auth-brand .eyebrow { color: #a8ddbb; margin-bottom: 22px; }
+.auth-brand h1 { font-size: clamp(38px, 4vw, 58px); line-height: 1.15; margin-bottom: 24px; }
+.auth-brand h1 span { color: #a8ddbb; }
+.brand-description { max-width: 380px; color: #d1e5d8; line-height: 1.8; }
+.brand-footer { color: #a8ddbb; font-size: 13px; margin-top: 50px; }
+.auth-content { display: grid; place-items: center; padding: 36px 24px; }
+.auth-card { width: min(100%, 420px); }
+.auth-card h2 { font-size: 34px; margin-bottom: 8px; }
+.auth-card > .muted { margin-bottom: 30px; }
+.mobile-logo { display: none; }
+.auth-form { display: flex; flex-direction: column; gap: 10px; }
+.auth-form label { font-size: 13px; font-weight: 700; margin-top: 7px; }
+.auth-form input { width: 100%; border: 1px solid #dce4de; border-radius: 10px; background: #fff; min-height: 48px; padding: 12px 14px; outline: none; color: #18241f; transition: border .2s, box-shadow .2s; }
+.auth-form input:focus { border-color: var(--green); box-shadow: 0 0 0 3px #176b4d18; }
+.auth-form input::placeholder { color: #a4ada7; }
+.password-field { position: relative; }
+.password-field input { padding-right: 48px; }
+.password-toggle { position: absolute; right: 5px; top: 5px; width: 38px; height: 38px; border: 0; background: transparent; color: var(--muted); display: grid; place-items: center; }
+.btn-primary { width: 100%; min-height: 49px; border: 0; border-radius: 10px; background: var(--green); color: #fff; font-weight: 700; margin-top: 18px; transition: background .2s, transform .2s; }
+.btn-primary:hover { background: var(--green-dark); }
+.btn-primary:disabled { opacity: .65; cursor: wait; }
+.auth-switch { text-align: center; margin-top: 25px; font-size: 13px; color: var(--muted); line-height: 1.8; }
+.auth-switch a { font-weight: 700; }
+.alert-error { border: 1px solid #f1c8c5; background: #fff1f0; color: #a12c25; padding: 12px 14px; border-radius: 9px; margin: 18px 0; font-size: 13px; line-height: 1.6; }
+.register-page { min-height: 100vh; padding: 0 24px 60px; }
+.register-header { max-width: 1000px; height: 82px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand-inline { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; color: #18241f; }
+.brand-logo.small { width: 40px; height: 40px; margin: 0; border-radius: 12px; background: var(--green); }
+.register-header > .muted { font-size: 13px; }
+.register-card { max-width: 660px; margin: 30px auto; padding: clamp(24px, 5vw, 48px); border: 1px solid var(--border); border-radius: 20px; background: white; box-shadow: 0 12px 50px #173d2608; }
+.register-card h1 { font-size: clamp(27px, 4vw, 36px); margin-bottom: 10px; }
+.register-card > .muted { margin-bottom: 28px; }
+.register-card h3 { font-size: 16px; margin: 12px 0 4px; }
+.form-divider { height: 1px; background: var(--border); margin: 18px 0 8px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-grid > div { min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.loading-screen { min-height: 100vh; display: grid; place-items: center; color: var(--muted); background: #f5f7f5; }
+.dashboard-page { min-height: 100vh; }
+.dashboard-header { height: 76px; background: #fff; border-bottom: 1px solid var(--border); padding: 0 clamp(20px, 5vw, 70px); display: flex; align-items: center; justify-content: space-between; }
+.btn-logout { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--border); padding: 10px 14px; border-radius: 9px; font-size: 13px; font-weight: 700; color: #37443b; }
+.dashboard-content { max-width: 1120px; margin: 0 auto; padding: 48px 24px; }
+.dashboard-content > h1 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 8px; }
+.salon-banner { margin: 32px 0; padding: 25px; background: #104c38; color: #fff; border-radius: 16px; display: flex; align-items: center; gap: 18px; }
+.salon-icon { width: 54px; height: 54px; flex: 0 0 auto; border-radius: 14px; display: grid; place-items: center; background: #ffffff18; }
+.salon-label { color: #b6dec4; font-size: 10px; letter-spacing: .14em; font-weight: 800; margin-bottom: 5px; }
+.salon-banner h2 { font-size: 22px; margin-bottom: 7px; }
+.salon-location { display: flex; align-items: center; gap: 5px; color: #d1e5d8; font-size: 13px; margin: 0; }
+.status-pill { margin-left: auto; padding: 7px 11px; background: #d5f5df; color: #176b4d; border-radius: 30px; font-size: 11px; font-weight: 800; }
+.dashboard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.dashboard-tile { padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 15px; }
+.tile-icon { display: grid; place-items: center; width: 43px; height: 43px; color: var(--green); background: var(--green-light); border-radius: 12px; margin-bottom: 18px; }
+.dashboard-tile h3 { font-size: 17px; margin-bottom: 8px; }
+.dashboard-tile p { color: var(--muted); font-size: 13px; line-height: 1.7; margin-bottom: 18px; }
+.tile-status { color: var(--green); font-size: 11px; font-weight: 700; }
+@media (max-width: 760px) {
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-brand { display: none; }
+  .auth-content { padding: 28px 22px; }
+  .auth-card { max-width: 440px; }
+  .mobile-logo { display: flex; align-items: center; gap: 9px; font-family: "Manrope", sans-serif; font-weight: 800; margin-bottom: 48px; color: var(--green); }
+  .mobile-logo svg { padding: 4px; width: 34px; height: 34px; border-radius: 10px; background: var(--green-light); }
+  .register-page { padding: 0 15px 36px; }
+  .register-header { height: 70px; }
+  .register-card { margin: 18px auto; padding: 24px 19px; border-radius: 15px; }
+  .form-grid { grid-template-columns: 1fr; gap: 10px; }
+  .dashboard-header { height: 66px; padding: 0 16px; }
+  .dashboard-content { padding: 32px 16px; }
+  .salon-banner { padding: 18px; gap: 12px; align-items: flex-start; }
+  .salon-icon { width: 44px; height: 44px; }
+  .salon-banner h2 { font-size: 18px; overflow-wrap: anywhere; }
+  .status-pill { padding: 6px 9px; }
+  .dashboard-grid { grid-template-columns: 1fr; gap: 12px; }
+}
