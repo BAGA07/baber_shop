@@ -21,6 +21,7 @@ class QueueEntry extends Model
         'joined_at',
         'started_at',
         'completed_at',
+        'tracking_token_hash',
     ];
 
     protected function casts(): array

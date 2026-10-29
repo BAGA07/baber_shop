@@ -34,7 +34,12 @@ class Salon extends Model
     }
 
     public function queues(): HasMany
-{
-    return $this->hasMany(Queue::class);
-}
+    {
+        return $this->hasMany(Queue::class);
+    }
+
+    public function services(): HasMany
+    {
+        return $this->hasMany(Service::class);
+    }
 }

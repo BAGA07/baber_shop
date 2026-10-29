@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Service extends Model
 {
@@ -18,6 +17,8 @@ class Service extends Model
         'duration_minutes',
         'price',
         'is_active',
+        'service_template_id',
+        'image_path',
     ];
 
     protected function casts(): array
@@ -34,8 +35,8 @@ class Service extends Model
         return $this->belongsTo(Salon::class);
     }
 
-    public function services(): HasMany
-{
-    return $this->hasMany(Service::class);
-}
+    public function template(): BelongsTo
+    {
+        return $this->belongsTo(ServiceTemplate::class, 'service_template_id');
+    }
 }
